@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+  border: 1px solid black;
+}
+    table.center {
+    margin-left: auto; 
+    margin-right: auto;
+}
+</style>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js" crossorigin></script>
+    
+    <script type="text/babel">
+
+        function TabelaBebidas(){
+               let CONTENT = ( <div id="app">
+                <table id="tabela" border="1">
+                    <tr><th>Nome</th><th>Marca</th></tr>
+                    <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                    <tr><td>Skol Beats</td><td>Skol</td></tr>
+                    <tr><td>Caracu</td><td>Caracu</td></tr>
+                    <tr><td>Kaiser</td><td>Kaiser</td></tr>
+                </table>
+                </div>)
+                return CONTENT
+        }
+
+        function Cabecalho(){
+            let cabecalho = 
+            (<h1>
+                Minha Tabela Bebidas 
+            </h1>)
+            return cabecalho
+        }
+        // Questão 1
+        // ReactDOM.render(    
+        //     TabelaBebidas()
+        //    ,
+        //    document.getElementById("app"))
+
+        //Questão 2
+        // ReactDOM.render(    
+        //     <TabelaBebidas/>
+        //    ,
+        //    document.getElementById("app"))
+
+        //Questão 3
+        ReactDOM.render(  
+            React.createElement('div',null,<Cabecalho/>,<TabelaBebidas/>)
+           ,
+           document.getElementById("app"))
+        
+
+    
+     </script>
+    </script>
+</body>
+</html>
