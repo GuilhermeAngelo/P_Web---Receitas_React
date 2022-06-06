@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 03</title>
+</head>
+<style>
+    #tabela{
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+tr{
+    border: none;
+    border-radius: 5px;
+}
+
+th{
+    background-color: orange;
+}
+</style>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js" crossorigin></script>
+    
+    <script type="text/babel">
+        
+        class TabelaBebidas extends React.Component{
+            render(){
+                return (
+
+                <div>
+
+                <table id="tabela" border="1">
+
+                    <thead>
+
+                        <tr><th>Nome</th><th>Marca</th></tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+
+                    </tbody>
+
+                </table>
+
+                </div> 
+
+                )
+            }
+        } 
+
+        // exercício: não fiz com a tabela de cana , fiz com uma tabela de lutadores.
+        class TabelaLutadores extends React.Component{
+            
+            render(){
+                return (
+                <div align="center">
+                <em><h1>{this.props.titulo}</h1></em>
+                <hr width="900"></hr>
+                <table id="tabela" border="1" align="center" width="900">
+
+                    <thead>
+
+                        <tr><th>Nome</th><th>Poder de Luta</th><th>Idade</th></tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr><td>Goku</td><td>8000+</td><td>24</td></tr>
+                        <tr><td>Vegeta</td><td>7500+</td><td>29</td></tr>
+                        <tr><td>Kuririn</td><td>1770+</td><td>24</td></tr>
+                        <tr><td>Picolo</td><td>3500+</td><td>24</td></tr>
+                        <tr><td>Raditz</td><td>1500+</td><td>29</td></tr>
+
+                    </tbody>
+
+                </table>
+
+                </div> 
+
+                )
+            }
+        } 
+        
+        ReactDOM.render(
+
+        <TabelaLutadores titulo="Tabela Lutadores"/>
+        ,
+        document.getElementById("app"))
+    </script>
+</body>
+</html>
