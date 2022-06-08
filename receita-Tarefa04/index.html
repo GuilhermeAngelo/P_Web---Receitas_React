@@ -1,0 +1,72 @@
+<html>
+    <title>ReceitaReact - 4</title>
+
+    <style>
+        table{
+            border-radius: 5px;
+        }
+
+        tr{
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        th{
+            background-color: rgb(6, 127, 6);
+            color: aliceblue;
+            border-radius: 5px;
+        }
+
+        td{
+            border: 0.5;
+            border-radius: 5px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+
+    </div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js" crossorigin></script>
+
+    <script type="text/babel">
+
+      const Titulo = ({titulo}) => {
+        return (
+          <h1> {titulo} </h1> 
+        )
+      }
+    
+      const TabelaBebidas = ({cabecalho, conteudo}) => {
+        return (
+          <div align = "center">
+            <em><Titulo titulo="Tabela de Bebidas"/></em>
+            <hr width = "900"></hr>
+            <table id="tabela" align = "center" border="1" width="900">
+              <thead>
+                <tr>{cabecalho.map((value_cabecalho) => <th>{value_cabecalho}</th>)}</tr>
+              </thead>
+              <tbody>
+                {conteudo.map((objeto) => <tr>{Object.values(objeto).map((values) => <td>{values}</td>)}</tr>)}
+              </tbody>
+            </table>
+  
+          </div>
+        )
+      }
+
+      const valoresCabecalho = ["Nome", "Marca", "Qualidade"]
+      const valoresConteudo = [{nome: "Sub Zero", marca: "Antartida", teste: "Ótima"}, {nome: "Devassa", marca: "Duplo Malte", teste: "Boa"},{nome: "Skol", marca: "Duplo Malte", teste: "Ótima"},{nome: "Pitu", marca: "Engenho confia", teste: "Boa"}]
+      
+      ReactDOM.render(
+        <TabelaBebidas cabecalho={valoresCabecalho} conteudo={valoresConteudo}/>
+        ,
+        document.getElementById('app')
+      )  
+    </script>
+  </body>
+</html>
